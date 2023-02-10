@@ -19,4 +19,10 @@ public class Contrat implements Serializable {
     private Boolean archive;
     private Integer montantContrat;
 
+    //Many to one with Etudiant
+    @ManyToOne
+    @JoinColumn(name = "idEtudiant")
+    private Etudiant etudiant;
+    
+
 }

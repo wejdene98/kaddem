@@ -11,4 +11,14 @@ public class Department implements Serializable {
     private long idDepart;
     private String nomDepart;
 
+    //one to many with Etudiant
+    @OneToMany(mappedBy = "Etudiant")
+    private List<Etudiant> etudiants;
+
+    //Many to one with Universite
+    @ManyToOne
+    @JoinColumn(name = "idUniversite")
+    private Universite universite;
+    
+
 }

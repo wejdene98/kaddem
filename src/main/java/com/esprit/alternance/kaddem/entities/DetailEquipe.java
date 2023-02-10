@@ -12,5 +12,9 @@ public class DetailEquipe implements Serializable {
     private Integer salle;
     private String thematique;
 
+    //one to one with Equipe
+    @OneToOne
+    @JoinColumn(name = "idEquipe")
+    private Equipe equipe;
 
 }
