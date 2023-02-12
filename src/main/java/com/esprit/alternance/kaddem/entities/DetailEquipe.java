@@ -36,9 +36,16 @@ public class DetailEquipe implements Serializable {
     private Integer salle;
     private String thematique;
 
+<<<<<<< HEAD
     @OneToOne(mappedBy ="detailEquipe")
     private Equipe equipe;
 
 
+=======
+    //one to one with Equipe
+    @OneToOne
+    @JoinColumn(name = "idEquipe")
+    private Equipe equipe;
+>>>>>>> c8bf912315c71deb6fa90257e25b713f4fc3ccc5
 
 }

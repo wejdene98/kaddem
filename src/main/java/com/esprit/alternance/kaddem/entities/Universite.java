@@ -35,6 +35,14 @@ public class Universite implements Serializable {
     private long idUniv;
     private String nomUniv;
 
+<<<<<<< HEAD
     @OneToMany(mappedBy = "universite")
     private Department department;
+=======
+    //one to many with Department
+    @OneToMany(mappedBy = "Department")
+    private List<Department> departments;
+    
+
+>>>>>>> c8bf912315c71deb6fa90257e25b713f4fc3ccc5
 }

@@ -38,6 +38,7 @@ public class Etudiant implements Serializable {
     @Enumerated(EnumType.STRING)
     private Option option;
 
+<<<<<<< HEAD
 
     @OneToMany(mappedBy = "etudiant")
     private Contrat contrat;
@@ -49,5 +50,28 @@ public class Etudiant implements Serializable {
     private Equipe equipe;
 
 
+=======
+// Constructeur et accesseurs (getters) et mutateurs (setters)
+
+
+//one to many with Contrat
+@OneToMany(mappedBy = "Contrat")
+private List<Contrat> contrats;
+
+//Many to one with Department
+@ManyToOne
+@JoinColumn(name = "idDepartment")
+private Department department;
+
+//ManyToMany with Equipe
+@ManyToMany(etch = FetchType.LAZY, cascade = CascadeType.ALL)
+@JoinTable(name = "Etudiant_Equipe", joinColumns = {
+        @JoinColumn(name = "idEtudiant", nullable = false, updatable = false) },
+        inverseJoinColumns = { @JoinColumn(name = "idEquipe",
+                nullable = false, updatable = false) })
+>>>>>>> c8bf912315c71deb6fa90257e25b713f4fc3ccc5
 
 }
+
+
+

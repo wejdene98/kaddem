@@ -27,10 +27,22 @@ public class Department implements Serializable {
     private long idDepart;
     private String nomDepart;
 
+<<<<<<< HEAD
     @OneToMany(mappedBy = "department")
     private Etudiant etudiant;
 
     @ManyToOne
     private Universite universite;
+=======
+    //one to many with Etudiant
+    @OneToMany(mappedBy = "Etudiant")
+    private List<Etudiant> etudiants;
+
+    //Many to one with Universite
+    @ManyToOne
+    @JoinColumn(name = "idUniversite")
+    private Universite universite;
+    
+>>>>>>> c8bf912315c71deb6fa90257e25b713f4fc3ccc5
 
 }
