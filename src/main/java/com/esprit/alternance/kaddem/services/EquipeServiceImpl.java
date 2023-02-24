@@ -8,7 +8,6 @@ import java.util.List;
 
 @AllArgsConstructor
 @Service
-
 public class EquipeServiceImpl implements IEquipeService{
 
     EquipeRepository equipeRepository;
