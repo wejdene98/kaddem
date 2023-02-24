@@ -24,7 +24,7 @@ public class EquipeServiceImpl implements IEquipeService{
     }
 
     @Override
-    public Equipe updateEquipe(Equipe e) {
+    public Equipe updateEquipe(Equipe e ) {
         return equipeRepository.save(e) ;
     }
 
