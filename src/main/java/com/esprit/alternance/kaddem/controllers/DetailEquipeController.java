@@ -24,8 +24,8 @@ public class DetailEquipeController {
         return detailEquipeService.retrieveDetailEquipe(detailEquipeId);
     }
 
-    @PostMapping("/detailequipes")
-    public DetailEquipe createDetailEquipe( DetailEquipe detailEquipe) {
+    @PostMapping("/detailequipes/add")
+    public DetailEquipe createDetailEquipe( @RequestBody DetailEquipe detailEquipe) {
         return detailEquipeService.addDetailEquipe(detailEquipe);
     }
 

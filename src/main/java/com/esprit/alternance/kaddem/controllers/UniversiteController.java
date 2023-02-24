@@ -3,10 +3,7 @@ package com.esprit.alternance.kaddem.controllers;
 import com.esprit.alternance.kaddem.entities.Universite;
 import com.esprit.alternance.kaddem.services.UniversiteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,23 +19,25 @@ public class UniversiteController {
     }
 
     @GetMapping("/universites/{id}")
-    public Universite retrieveUniversite(long id) {
+    public Universite retrieveUniversite(@PathVariable("id") Long id) {
         return universiteService.retrieveUniversite(id);
     }
 
     @PostMapping("/universites/add")
-    public Universite addUniversite(Universite u) {
+    public Universite addUniversite(@RequestBody Universite u) {
         return universiteService.addUniversite(u);
     }
 
-    @DeleteMapping("/universites/delete/{id}")
-    public void deleteUniversite(long id) {
-        universiteService.deleteUniversite(id);
+    @PutMapping("/universites/update/{id}")
+    public Universite updateUniversite(@RequestBody Universite u, @PathVariable("id") Long idUniv) {
+        u.setIdUniv(idUniv);
+        return universiteService.updateUniversite(u);
     }
-    
 
-
-
-
+    @DeleteMapping("/universites/delete/{id}")
+    public void deleteUniversite(@PathVariable("id") Long idUniv) {
+        System.out.println(idUniv);
+        universiteService.deleteUniversite(idUniv);
+    }
 
 }

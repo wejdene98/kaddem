@@ -3,11 +3,7 @@ package com.esprit.alternance.kaddem.controllers;
 import com.esprit.alternance.kaddem.entities.Etudiant;
 import com.esprit.alternance.kaddem.services.EtudiantServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,7 +24,7 @@ public class EtudiantController {
     }
 
     @PostMapping("/etudiants/add")
-    public Etudiant addEtudiant(Etudiant e) {
+    public Etudiant addEtudiant( @RequestBody Etudiant e) {
         return etudiantService.addEtudiant(e);
     }
 
