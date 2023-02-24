@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EtudiantRepository  extends JpaRepository<Etudiant, Long> {
 
-  /*  public List<Etudiant> findByDepartement(Department department);
+/*    public List<Etudiant> findByDepartement(Department department);
 
-    public List<Etudiant> findByEquipeNiveau(Niveau niveau);*/
+    public List<Etudiant> findByEquipeAndNiveau(Niveau niveau);*/
 }

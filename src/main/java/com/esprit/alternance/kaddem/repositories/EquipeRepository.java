@@ -4,23 +4,23 @@ import com.esprit.alternance.kaddem.entities.Equipe;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-
-
 public interface EquipeRepository extends JpaRepository<Equipe, Integer> {
 
-/*
-public List<projetDetail> findByProjetDetailTechnologie(String technologie);
 
 
-public List<Projet> findByEquipesNom(String nom);
+/*public List<Equipe> findByNom(String nom);
+
+public List<Equipe> findByNomNiveau (String nom, String niveau);
+
+public List<Equipe> findByNomNiveauSpecialite (String nom, String niveau, String specialite);
+
+public List<Equipe> findByNomNiveauSpecialiteEtudiant(String nom, String niveau, String specialite, String etudiant);*/
 
 
-public List<Projet> findByEquipesNomAndProjetDetailDescriptionIsNotNull(String nom);
 
 
-public List<Projet> findByEquipesIdEquipeAndEquipesEntrepriseNom(Long idEquipe, String nom );
 
-public List<Projet> findByEquipesSpecialiteAndEquipesEntrepriseAdresse(String specialite, String adresse);*/
+
 
 
 
