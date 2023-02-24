@@ -31,7 +31,7 @@ public class ContratController {
         return contratService.retrieveContrat(contratId);
     }
 
-    @PostMapping(value="/contrats")
+    @PostMapping(value="/contrats/add")
     public void saveContrat(@RequestBody Contrat contrat) {
         contratService.addContrat(contrat);
     }
