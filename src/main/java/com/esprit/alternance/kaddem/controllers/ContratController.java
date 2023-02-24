@@ -6,6 +6,7 @@ import com.esprit.alternance.kaddem.services.ContratServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -36,7 +37,15 @@ public class ContratController {
         contratService.addContrat(contrat);
     }
 
-    @DeleteMapping(value="/contrats/{contratId}")
+    @PutMapping(value="/contrats/update/{contratId}")
+    public Contrat updateContrat(@RequestBody Contrat contrat, @PathVariable(name="contratId") Long contratId) {
+        contrat.setIdContrat(contratId);
+        contrat.setDateDebutContrat(new Date());
+        contrat.setDateFinContrat(new Date());
+        return contratService.updateContrat(contrat);
+    }
+
+    @DeleteMapping(value="/contrats/delete/{contratId}")
     public void deleteContrat(@PathVariable(name="contratId") Long contratId) {
         contratService.deleteContrat(contratId);
     }
