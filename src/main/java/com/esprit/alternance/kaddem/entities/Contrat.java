@@ -1,6 +1,7 @@
 package com.esprit.alternance.kaddem.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,9 +28,8 @@ public class Contrat implements Serializable {
     private Date dateFinContrat;
     @Enumerated(EnumType.STRING)
     private Specialite specialite;
-    private Boolean archive;
+    private Boolean archive=false;
     private Integer montantContrat;
-
 
     @ManyToOne
     private Etudiant etudiant;

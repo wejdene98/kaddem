@@ -1,5 +1,6 @@
 package com.esprit.alternance.kaddem.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,6 +8,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -23,9 +25,21 @@ public class Equipe implements Serializable {
     private String nomEquipe;
     private Niveau niveau;
 
-    @OneToOne
+    // @OneToOne
+    // private DetailEquipe detailEquipe;
+
+    // @ManyToMany(cascade =CascadeType.ALL)
+    // @JsonIgnore
+    // private Set<Etudiant> etudiants;
+
+  
+    @OneToOne(cascade = CascadeType.ALL)
     private DetailEquipe detailEquipe;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Etudiant> etudiants;
+
+    @ManyToMany
+    @JsonIgnore
+    private List<Etudiant> etudiants;
+
+
 }

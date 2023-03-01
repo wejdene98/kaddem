@@ -7,6 +7,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 @Data
 
 @Getter
@@ -24,8 +25,12 @@ public class Universite implements Serializable {
 
     private String nomUniv;
 
-    @OneToMany(mappedBy = "university")
-    @JsonIgnore
-    private List<Department> departments;
+    // @OneToMany(mappedBy = "university")
+    // @JsonIgnore
+    // private List<Department> departments;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Department> departments;
+
 
 }

@@ -1,6 +1,7 @@
 package com.esprit.alternance.kaddem.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -27,16 +29,22 @@ public class Etudiant implements Serializable {
     private Option option;
 
 
-    @OneToMany(mappedBy = "etudiant")
-    private List<Contrat> contrats;
+    // @OneToMany(mappedBy = "etudiant",cascade = CascadeType.ALL)
+    // @JsonIgnore
+    // private List<Contrat> contrats;
+    // @ManyToOne
+    // @JsonIgnore
+    // private Department department;
+    // @ManyToMany(mappedBy = "etudiants")
+    // @JsonIgnore
+    // private List<Equipe> equipes ;
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "etudiant")
+    private Set<Contrat> contrats;
     @ManyToOne
-    private Department department;
-    @ManyToMany(mappedBy = "etudiants")
+    private Department departement;
+    @ManyToMany(mappedBy ="etudiants" )
     private List<Equipe> equipes;
-
-
-// Constructeur et accesseurs (getters) et mutateurs (setters)
-
 
 
 }
