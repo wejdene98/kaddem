@@ -1,8 +1,8 @@
 package com.esprit.alternance.kaddem.services;
 
-import java.util.List;
-
 import com.esprit.alternance.kaddem.entities.Equipe;
+
+import java.util.List;
 
 public interface IEquipeService {
 
@@ -12,7 +12,7 @@ public interface IEquipeService {
 
     Equipe updateEquipe (Equipe e);
 
-    Equipe retrieveEquipe (Integer idEquipe);
+    Equipe retrieveEquipe (long idEquipe);
 
-    void deleteEquipe(Integer id);
+    void deleteEquipe(long id);
 }
