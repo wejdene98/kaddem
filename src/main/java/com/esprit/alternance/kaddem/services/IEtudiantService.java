@@ -12,9 +12,9 @@ public interface IEtudiantService {
 
     Etudiant updateEtudiant(Etudiant e);
 
-    void deleteEtudiant(Integer id);
+    void deleteEtudiant(Integer idEtudiant);
 
     Etudiant retrieveEtudiant(Integer id);
-    
+    public void assignEtudiantToDepartement (Integer etudiantId , Integer departementId );
     
 }
