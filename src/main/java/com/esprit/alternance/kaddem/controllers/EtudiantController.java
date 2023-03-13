@@ -57,6 +57,16 @@ public class EtudiantController {
         etudiantService.assignEtudiantToDepartement(idEtudiant, idDepartement);
     }
 
+    @Operation(description = "Assign Etudiant to Equipe")
+    @PostMapping("/asgin-etudiant-contrat-equipe/{idContrat}/{idEquipe}")
+    public Etudiant addAndAssignEtudiantToEquipeAndContract(
+            @RequestBody Etudiant etudiant,
+            @PathVariable("idContrat") Integer idContrat,
+            @PathVariable("idEquipe")  Integer idEquipe
+    ){
+        return etudiantService.addAndAssignEtudiantToEquipeAndContract(etudiant, idContrat, idEquipe);
+    }
+
 
 
 
