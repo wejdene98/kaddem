@@ -16,5 +16,6 @@ public interface IEtudiantService {
 
     Etudiant retrieveEtudiant(Integer id);
     public void assignEtudiantToDepartement (Integer etudiantId , Integer departementId );
+    Etudiant addAndAssignEtudiantToEquipeAndContract(Etudiant e, long idContrat, long idEquipe);
     
 }
