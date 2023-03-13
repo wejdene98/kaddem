@@ -18,13 +18,6 @@ public class ContratController {
     @Autowired
     private ContratServiceImpl contratService;
 
-    @RequestMapping("/hello2")
-    public String sayHello2()
-    {
-        return "Hello";
-    }
-
-
     @Operation(description = "Get All Contrats")
     @GetMapping(value="/contrats")
     public List<Contrat> getAllContrats() {

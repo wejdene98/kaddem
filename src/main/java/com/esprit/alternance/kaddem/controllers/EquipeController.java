@@ -17,13 +17,6 @@ public class EquipeController {
 @Autowired
      EquipeServiceImpl equipeService;
 
-
-    @RequestMapping("/hello")
-    public String sayHello()
-    {
-        return "Hello";
-    }
-
    @Operation(description = "Get All Equipes")
    @GetMapping(value= "/equipes")
     public List<Equipe> getAllEquipes() {

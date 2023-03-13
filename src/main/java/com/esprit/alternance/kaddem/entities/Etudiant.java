@@ -1,7 +1,6 @@
 package com.esprit.alternance.kaddem.entities;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -43,7 +42,7 @@ public class Etudiant implements Serializable {
     private Set<Contrat> contrats;
     @ManyToOne
     private Department departement;
-    @ManyToMany(mappedBy ="etudiants" )
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "etudiants")
     private List<Equipe> equipes;
 
 
